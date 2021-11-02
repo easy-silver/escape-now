@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>매장 목록</title>
+    </head>
+    <body>
+        <ul>
+            <li th:each="shop : ${shops}">
+                <a th:href="${'/shops/' + shop.id + '/branches'}" th:text="${shop.name}"></a>
+            </li>
+        </ul>
+    </body>
+</html>
