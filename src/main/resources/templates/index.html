@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>메인</title>
+    </head>
+    <body>
+        <ul>
+            <li th:each="area : ${T(com.timo.escapetimetable.domain.AreaCode).values()}">
+                <a th:href="${'/shops/' + area}" th:text="${area.title}">지역</a>
+            </li>
+        </ul>
+    </body>
+</html>
