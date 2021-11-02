@@ -1,5 +1,7 @@
-package com.timo.escapetimetable.domain;
+package com.timo.escapetimetable.domain.branch;
 
+import com.timo.escapetimetable.domain.AreaCode;
+import com.timo.escapetimetable.domain.shop.Shop;
 import lombok.Getter;
 
 import javax.persistence.*;
