@@ -5,6 +5,9 @@ import com.timo.escapetimetable.domain.branch.Branch;
 import com.timo.escapetimetable.domain.branch.BranchRepository;
 import com.timo.escapetimetable.domain.shop.Shop;
 import com.timo.escapetimetable.domain.shop.ShopRepository;
+import com.timo.escapetimetable.dto.ThemeResponse;
+import com.timo.escapetimetable.parser.NextEditionParser;
+import com.timo.escapetimetable.parser.Parser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,4 +51,31 @@ public class IndexService {
         return branchRepository.findAllByShopAndAreaCode(shop, areaCode);
     }
 
+    /**
+     * 해당 매장의 예약 가능한 테마 정보 조회
+     *
+     * @param branchId
+     * @return
+     */
+    public ThemeResponse getThemesAndTimetable(Long branchId) {
+        Branch branch = branchRepository.findById(branchId)
+                .orElseThrow(() -> new EntityNotFoundException("존재하지 않는 지점 번호 = " + branchId));
+
+        ThemeResponse response = new ThemeResponse();
+
+        String shopName = branch.getShop().getName();
+        Parser parser = null;
+
+        switch (shopName) {
+            case "넥스트에디션":
+                parser = new NextEditionParser();
+                break;
+        }
+
+        response.setShop(shopName);
+        response.setBranch(branch.getName());
+        response.setThemes(parser.getThemesWithAvailableTimetable(branch.getUrl()));
+
+        return response;
+    }
 }

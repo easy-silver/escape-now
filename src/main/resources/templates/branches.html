@@ -8,7 +8,7 @@
     <body>
         <ul>
             <li th:each="branch : ${branches}">
-                <a th:href="${'/shops/' + branch.id + '/branches'}" th:text="${branch.name}"></a>
+                <a th:href="${'/' + area + '/shops/' + branch.id + '/branches/' + branch.id}" th:text="${branch.name}"></a>
             </li>
         </ul>
     </body>

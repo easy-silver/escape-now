@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>예약 가능한 테마 목록</title>
+    </head>
+    <body>
+        <h1 th:text="${response.shop + ' ' + response.branch}"></h1>
+        <ul>
+            <li th:each="theme : ${response.themes}">
+                <h3 th:text="${theme.title}"></h3>
+                <ul>
+                    <li th:each="time : ${theme.times}" th:text="${time}"></li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
