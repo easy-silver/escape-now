@@ -7,7 +7,7 @@ import java.util.List;
 
 class NextEditionTableParserTest {
 
-    NextEditionTableParser parser = new NextEditionTableParser();
+    NextEditionParser parser = new NextEditionParser();
 
     private final String gangnamUrl = "https://www.nextedition.co.kr/shops/NextEdition%20Gangnam";
     private final String gangnam2Url = "https://www.nextedition.co.kr/shops/NextEdition%20Gangnam2";

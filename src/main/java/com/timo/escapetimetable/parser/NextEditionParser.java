@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class NextEditionTableParser implements Parser {
+public class NextEditionParser implements Parser {
 
     @Override
     public List<ThemeInfo> getThemesWithAvailableTimetable(String url) {
