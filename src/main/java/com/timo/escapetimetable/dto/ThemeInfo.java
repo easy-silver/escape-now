@@ -1,12 +1,12 @@
 package com.timo.escapetimetable.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Getter @Setter
 public class ThemeInfo {
