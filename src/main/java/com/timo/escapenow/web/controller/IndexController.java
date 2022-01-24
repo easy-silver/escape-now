@@ -1,4 +1,4 @@
-package com.timo.escapenow.controller;
+package com.timo.escapenow.web.controller;
 
 import com.timo.escapenow.service.IndexService;
 import lombok.RequiredArgsConstructor;
