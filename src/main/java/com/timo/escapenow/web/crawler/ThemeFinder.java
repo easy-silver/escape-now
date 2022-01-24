@@ -25,13 +25,16 @@ public abstract class ThemeFinder {
         Connection connection = initConnect(reservationUrl);
         Document document = getDocument(connection);
 
-        return crawlingThemes(document);
+        List<ThemeInfo> themeInfos = crawlingThemes(document);
+        log.info("크롤링 완료");
+
+        return themeInfos;
     }
 
     /** 크롤링을 위한 ㄹURL 연결 */
     private Connection initConnect(String url) {
         Connection connection = Jsoup.connect(url);
-        log.info("URL:{} 연결 성공", url);
+        log.info("URL({}) 연결 성공", url);
 
         return connection;
     }
