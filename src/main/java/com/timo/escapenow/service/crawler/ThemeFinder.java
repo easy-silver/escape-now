@@ -1,4 +1,4 @@
-package com.timo.escapenow.web.crawler;
+package com.timo.escapenow.service.crawler;
 
 import com.timo.escapenow.web.dto.ThemeInfo;
 import lombok.extern.slf4j.Slf4j;
