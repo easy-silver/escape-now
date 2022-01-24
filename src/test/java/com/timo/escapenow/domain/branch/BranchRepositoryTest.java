@@ -1,9 +1,8 @@
-package com.timo.escapetimetable.domain.branch;
+package com.timo.escapenow.domain.branch;
 
-import com.timo.escapetimetable.domain.AreaCode;
-import com.timo.escapetimetable.domain.shop.Shop;
-import com.timo.escapetimetable.domain.shop.ShopRepository;
-import org.assertj.core.api.Assertions;
+import com.timo.escapenow.domain.AreaCode;
+import com.timo.escapenow.domain.shop.Shop;
+import com.timo.escapenow.domain.shop.ShopRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
-package com.timo.escapetimetable.web.crawler;
+package com.timo.escapenow.web.crawler;
 
-import com.timo.escapetimetable.web.dto.ThemeInfo;
+import com.timo.escapenow.web.dto.ThemeInfo;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

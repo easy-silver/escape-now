@@ -1,13 +1,13 @@
-package com.timo.escapetimetable.service;
+package com.timo.escapenow.service;
 
-import com.timo.escapetimetable.domain.AreaCode;
-import com.timo.escapetimetable.domain.branch.Branch;
-import com.timo.escapetimetable.domain.branch.BranchRepository;
-import com.timo.escapetimetable.domain.shop.Shop;
-import com.timo.escapetimetable.domain.shop.ShopRepository;
-import com.timo.escapetimetable.web.dto.ThemeResponse;
-import com.timo.escapetimetable.web.crawler.NextEditionParser;
-import com.timo.escapetimetable.web.crawler.Parser;
+import com.timo.escapenow.domain.AreaCode;
+import com.timo.escapenow.domain.branch.Branch;
+import com.timo.escapenow.domain.branch.BranchRepository;
+import com.timo.escapenow.domain.shop.Shop;
+import com.timo.escapenow.domain.shop.ShopRepository;
+import com.timo.escapenow.web.dto.ThemeResponse;
+import com.timo.escapenow.web.crawler.NextEditionParser;
+import com.timo.escapenow.web.crawler.Parser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

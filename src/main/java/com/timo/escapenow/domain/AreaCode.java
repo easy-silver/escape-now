@@ -1,4 +1,4 @@
-package com.timo.escapetimetable.domain;
+package com.timo.escapenow.domain;
 
 import lombok.Getter;
 

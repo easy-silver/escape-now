@@ -1,6 +1,6 @@
-package com.timo.escapetimetable.domain.shop;
+package com.timo.escapenow.domain.shop;
 
-import com.timo.escapetimetable.domain.AreaCode;
+import com.timo.escapenow.domain.AreaCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,6 +1,6 @@
-package com.timo.escapetimetable.controller;
+package com.timo.escapenow.controller;
 
-import com.timo.escapetimetable.service.IndexService;
+import com.timo.escapenow.service.IndexService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

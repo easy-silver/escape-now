@@ -1,13 +1,13 @@
-package com.timo.escapetimetable;
+package com.timo.escapenow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EscapeTimetableApplication {
+public class EscapeNowApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EscapeTimetableApplication.class, args);
+		SpringApplication.run(EscapeNowApplication.class, args);
 	}
 
 }

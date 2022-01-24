@@ -1,6 +1,6 @@
-package com.timo.escapetimetable.domain.shop;
+package com.timo.escapenow.domain.shop;
 
-import com.timo.escapetimetable.domain.AreaCode;
+import com.timo.escapenow.domain.AreaCode;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

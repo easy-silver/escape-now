@@ -7,7 +7,7 @@
     </head>
     <body>
         <ul>
-            <li th:each="area : ${T(com.timo.escapetimetable.domain.AreaCode).values()}">
+            <li th:each="area : ${T(com.timo.escapenow.domain.AreaCode).values()}">
                 <a th:href="${area + '/shops'}" th:text="${area.title}">지역</a>
             </li>
         </ul>
