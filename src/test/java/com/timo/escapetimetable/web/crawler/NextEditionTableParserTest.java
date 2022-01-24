@@ -1,6 +1,6 @@
-package com.timo.escapetimetable.parser;
+package com.timo.escapetimetable.web.crawler;
 
-import com.timo.escapetimetable.dto.ThemeInfo;
+import com.timo.escapetimetable.web.dto.ThemeInfo;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

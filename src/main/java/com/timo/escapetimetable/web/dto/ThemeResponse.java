@@ -1,4 +1,4 @@
-package com.timo.escapetimetable.dto;
+package com.timo.escapetimetable.web.dto;
 
 import lombok.Getter;
 import lombok.Setter;
