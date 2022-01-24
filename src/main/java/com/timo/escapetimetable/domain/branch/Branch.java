@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Entity
 public class Branch {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "branch_id")
     private Long id;
 
