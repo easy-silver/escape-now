@@ -5,9 +5,9 @@ import com.timo.escapenow.domain.branch.Branch;
 import com.timo.escapenow.domain.branch.BranchRepository;
 import com.timo.escapenow.domain.shop.Shop;
 import com.timo.escapenow.domain.shop.ShopRepository;
+import com.timo.escapenow.web.crawler.NextEditionThemeFinder;
+import com.timo.escapenow.web.crawler.ThemeFinder;
 import com.timo.escapenow.web.dto.ThemeResponse;
-import com.timo.escapenow.web.crawler.NextEditionParser;
-import com.timo.escapenow.web.crawler.Parser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -64,17 +64,17 @@ public class IndexService {
         ThemeResponse response = new ThemeResponse();
 
         String shopName = branch.getShop().getName();
-        Parser parser = null;
+        ThemeFinder finder = null;
 
         switch (shopName) {
             case "넥스트에디션":
-                parser = new NextEditionParser();
+                finder = new NextEditionThemeFinder();
                 break;
         }
 
         response.setShop(shopName);
         response.setBranch(branch.getName());
-        response.setThemes(parser.getThemesWithAvailableTimetable(branch.getUrl()));
+        response.setThemes(finder.findAvailableThemes(branch.getUrl()));
 
         return response;
     }

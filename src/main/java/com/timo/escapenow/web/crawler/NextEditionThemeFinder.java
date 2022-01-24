@@ -47,7 +47,6 @@ public class NextEditionThemeFinder extends ThemeFinder {
             }
         }
 
-
         return themeInfoList;
     }
 }
