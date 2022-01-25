@@ -6,6 +6,7 @@ import com.timo.escapenow.domain.branch.BranchRepository;
 import com.timo.escapenow.domain.shop.Shop;
 import com.timo.escapenow.domain.shop.ShopRepository;
 import com.timo.escapenow.service.crawler.NextEditionThemeFinder;
+import com.timo.escapenow.service.crawler.SecretGardenThemeFinder;
 import com.timo.escapenow.service.crawler.ThemeFinder;
 import com.timo.escapenow.web.dto.ThemeResponse;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class IndexService {
 
     private void initThemeFinderMap() {
         themeFinderMap.put("넥스트에디션", new NextEditionThemeFinder());
+        themeFinderMap.put("비밀의화원", new SecretGardenThemeFinder());
     }
 
     /**
