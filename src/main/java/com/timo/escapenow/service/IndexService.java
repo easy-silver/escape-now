@@ -73,16 +73,12 @@ public class IndexService {
                 .orElseThrow(() -> new EntityNotFoundException("존재하지 않는 지점 번호 = " + branchId));
 
         String shopName = branch.getShop().getName();
+
         ThemeFinder finder = themeFinderMap.get(shopName);
         if (finder == null) {
             throw new IllegalArgumentException("유효하지 않은 매장 = " + shopName);
         }
 
-        ThemeResponse response = new ThemeResponse();
-        response.setShop(shopName);
-        response.setBranch(branch.getName());
-        response.setThemes(finder.findAvailableThemes(branch.getUrl()));
-
-        return response;
+        return new ThemeResponse(shopName, branch.getName(), finder.findAvailableThemes(branch.getUrl()));
     }
 }

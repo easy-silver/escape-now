@@ -7,7 +7,7 @@ import lombok.ToString;
 import java.util.List;
 
 @ToString
-@Getter @Setter
+@Getter
 public class ThemeResponse {
 
     private String shop;
@@ -16,4 +16,9 @@ public class ThemeResponse {
 
     private List<ThemeInfo> themes;
 
+    public ThemeResponse(String shop, String branch, List<ThemeInfo> themes) {
+        this.shop = shop;
+        this.branch = branch;
+        this.themes = themes;
+    }
 }
