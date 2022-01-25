@@ -8,20 +8,31 @@ import com.timo.escapenow.domain.shop.ShopRepository;
 import com.timo.escapenow.service.crawler.NextEditionThemeFinder;
 import com.timo.escapenow.service.crawler.ThemeFinder;
 import com.timo.escapenow.web.dto.ThemeResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Service
 public class IndexService {
 
     private final ShopRepository shopRepository;
     private final BranchRepository branchRepository;
+    private Map<String, ThemeFinder> themeFinderMap = new HashMap<>();
+
+    public IndexService(ShopRepository shopRepository, BranchRepository branchRepository) {
+        this.shopRepository = shopRepository;
+        this.branchRepository = branchRepository;
+        initThemeFinderMap();
+    }
+
+    private void initThemeFinderMap() {
+        themeFinderMap.put("넥스트에디션", new NextEditionThemeFinder());
+    }
 
     /**
      * 지역별 매장 목록 조회
@@ -61,17 +72,13 @@ public class IndexService {
         Branch branch = branchRepository.findById(branchId)
                 .orElseThrow(() -> new EntityNotFoundException("존재하지 않는 지점 번호 = " + branchId));
 
-        ThemeResponse response = new ThemeResponse();
-
         String shopName = branch.getShop().getName();
-        ThemeFinder finder = null;
-
-        switch (shopName) {
-            case "넥스트에디션":
-                finder = new NextEditionThemeFinder();
-                break;
+        ThemeFinder finder = themeFinderMap.get(shopName);
+        if (finder == null) {
+            throw new IllegalArgumentException("유효하지 않은 매장 = " + shopName);
         }
 
+        ThemeResponse response = new ThemeResponse();
         response.setShop(shopName);
         response.setBranch(branch.getName());
         response.setThemes(finder.findAvailableThemes(branch.getUrl()));
