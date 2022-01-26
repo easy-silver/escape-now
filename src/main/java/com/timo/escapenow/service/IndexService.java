@@ -23,7 +23,7 @@ public class IndexService {
 
     private final ShopRepository shopRepository;
     private final BranchRepository branchRepository;
-    private Map<String, ThemeFinder> themeFinderMap = new HashMap<>();
+    private final Map<String, ThemeFinder> themeFinderMap = new HashMap<>();
 
     public IndexService(ShopRepository shopRepository, BranchRepository branchRepository) {
         this.shopRepository = shopRepository;
@@ -31,6 +31,7 @@ public class IndexService {
         initThemeFinderMap();
     }
 
+    /** 매장별 ThemeFinder 구현체를 연결하는 Map */
     private void initThemeFinderMap() {
         themeFinderMap.put("넥스트에디션", new NextEditionThemeFinder());
         themeFinderMap.put("비밀의화원", new SecretGardenThemeFinder());
